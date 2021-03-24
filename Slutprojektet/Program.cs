@@ -6,7 +6,9 @@ namespace Slutprojektet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Board b1 = new Board();
+            Board.Draw();
+            Console.ReadLine();
         }
     }
 }
