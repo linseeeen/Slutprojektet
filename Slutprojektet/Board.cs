@@ -4,10 +4,11 @@ namespace Slutprojektet
 {
     public class Board
     {
-        private static int[,] board = new int [20, 10];
-        private static (int, int) wateringCan = (1, 2);
-        private static (int, int) store = (1, 0);
-        private static (int, int) gardenHoe = (1,4);
+        private int[,] board = new int [20, 10];
+        private (int, int) store = (1, 0);
+        private (int, int) wateringCan = (1, 2);
+        private (int, int) wheelbarrow = (1,4);
+        private (int, int) gardenHoe = (1,6);
         public Board()
         {
             for (int y = 0; y < board.GetLength(1); y++)
@@ -18,12 +19,13 @@ namespace Slutprojektet
                 }
             }
         }
-        private static void Stuff(){
-            board[wateringCan.Item1, wateringCan.Item2] = 1;
+        private void Stuff(){
             board[store.Item1, store.Item2] = 1;
-            board[gardenHoe.Item1, gardenHoe.Item2] = 1;
+            board[wateringCan.Item1, wateringCan.Item2] = 2;
+            board[wheelbarrow.Item1, wheelbarrow.Item2] = 3;
+            board[gardenHoe.Item1, gardenHoe.Item2] = 4;
         }
-        public static void Draw(){
+        public void Draw(){
             Stuff();
             for (int y = 0; y < board.GetLength(1); y++)
             {
